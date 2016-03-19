@@ -76,7 +76,7 @@ dbd_prob <- function(t, a0, b0, mu1, lambda2, mu2, gamma, a=0, B,
   
   ## a>=0, a<=a0, B >=a0+b0-a 
   if(a < 0) stop("a cannot be negative.")
-  if (a > a0) stop("a0 canot be smaller than a0.")
+  if (a > a0) stop("a canot be smaller than a0.")
   if (B < a0+b0-a) stop("B is too small.")
   
   ###########################################################
