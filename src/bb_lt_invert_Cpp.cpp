@@ -71,6 +71,8 @@ std::vector<double> bb_lt_invert_Cpp_impl(double t,
       res[i] = sk1*exp(AA/2);
     });
 
+//    Rcpp::Rcout << "Lmax: " << Lmax;
+
 //  auto end = std::chrono::steady_clock::now();
 //
 //  using TimingUnits = std::chrono::microseconds;

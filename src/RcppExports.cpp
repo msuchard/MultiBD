@@ -10,9 +10,35 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
+// SEIR_Cpp
+std::vector<double> SEIR_Cpp(const double t, const double alpha, const double beta, const double kappa, const long int S0, const long int E0, const long int I0, const int Ap1, const int Bp1, const int Cp1, const int direction, const int nblocks, const double tol, int& Lmax, const int computeMode, const int nThreads);
+RcppExport SEXP _MultiBD_SEIR_Cpp(SEXP tSEXP, SEXP alphaSEXP, SEXP betaSEXP, SEXP kappaSEXP, SEXP S0SEXP, SEXP E0SEXP, SEXP I0SEXP, SEXP Ap1SEXP, SEXP Bp1SEXP, SEXP Cp1SEXP, SEXP directionSEXP, SEXP nblocksSEXP, SEXP tolSEXP, SEXP LmaxSEXP, SEXP computeModeSEXP, SEXP nThreadsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< const double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< const double >::type beta(betaSEXP);
+    Rcpp::traits::input_parameter< const double >::type kappa(kappaSEXP);
+    Rcpp::traits::input_parameter< const long int >::type S0(S0SEXP);
+    Rcpp::traits::input_parameter< const long int >::type E0(E0SEXP);
+    Rcpp::traits::input_parameter< const long int >::type I0(I0SEXP);
+    Rcpp::traits::input_parameter< const int >::type Ap1(Ap1SEXP);
+    Rcpp::traits::input_parameter< const int >::type Bp1(Bp1SEXP);
+    Rcpp::traits::input_parameter< const int >::type Cp1(Cp1SEXP);
+    Rcpp::traits::input_parameter< const int >::type direction(directionSEXP);
+    Rcpp::traits::input_parameter< const int >::type nblocks(nblocksSEXP);
+    Rcpp::traits::input_parameter< const double >::type tol(tolSEXP);
+    Rcpp::traits::input_parameter< int& >::type Lmax(LmaxSEXP);
+    Rcpp::traits::input_parameter< const int >::type computeMode(computeModeSEXP);
+    Rcpp::traits::input_parameter< const int >::type nThreads(nThreadsSEXP);
+    rcpp_result_gen = Rcpp::wrap(SEIR_Cpp(t, alpha, beta, kappa, S0, E0, I0, Ap1, Bp1, Cp1, direction, nblocks, tol, Lmax, computeMode, nThreads));
+    return rcpp_result_gen;
+END_RCPP
+}
 // SIR_Cpp
-std::vector<double> SIR_Cpp(const double t, const double alpha, const double beta, const long int S0, const long int I0, const int Ap1, const int Bp1, const int direction, const int nblocks, const double tol, int& Lmax, const int computeMode, const int nThreads);
-RcppExport SEXP _MultiBD_SIR_Cpp(SEXP tSEXP, SEXP alphaSEXP, SEXP betaSEXP, SEXP S0SEXP, SEXP I0SEXP, SEXP Ap1SEXP, SEXP Bp1SEXP, SEXP directionSEXP, SEXP nblocksSEXP, SEXP tolSEXP, SEXP LmaxSEXP, SEXP computeModeSEXP, SEXP nThreadsSEXP) {
+std::vector<double> SIR_Cpp(const double t, const double alpha, const double beta, const long int S0, const long int I0, const int Ap1, const int Bp1, const int direction, const double powS, const double powI_inf, const double powI_rem, const int nblocks, const double tol, int& Lmax, const int computeMode, const int nThreads);
+RcppExport SEXP _MultiBD_SIR_Cpp(SEXP tSEXP, SEXP alphaSEXP, SEXP betaSEXP, SEXP S0SEXP, SEXP I0SEXP, SEXP Ap1SEXP, SEXP Bp1SEXP, SEXP directionSEXP, SEXP powSSEXP, SEXP powI_infSEXP, SEXP powI_remSEXP, SEXP nblocksSEXP, SEXP tolSEXP, SEXP LmaxSEXP, SEXP computeModeSEXP, SEXP nThreadsSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -24,12 +50,15 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< const int >::type Ap1(Ap1SEXP);
     Rcpp::traits::input_parameter< const int >::type Bp1(Bp1SEXP);
     Rcpp::traits::input_parameter< const int >::type direction(directionSEXP);
+    Rcpp::traits::input_parameter< const double >::type powS(powSSEXP);
+    Rcpp::traits::input_parameter< const double >::type powI_inf(powI_infSEXP);
+    Rcpp::traits::input_parameter< const double >::type powI_rem(powI_remSEXP);
     Rcpp::traits::input_parameter< const int >::type nblocks(nblocksSEXP);
     Rcpp::traits::input_parameter< const double >::type tol(tolSEXP);
     Rcpp::traits::input_parameter< int& >::type Lmax(LmaxSEXP);
     Rcpp::traits::input_parameter< const int >::type computeMode(computeModeSEXP);
     Rcpp::traits::input_parameter< const int >::type nThreads(nThreadsSEXP);
-    rcpp_result_gen = Rcpp::wrap(SIR_Cpp(t, alpha, beta, S0, I0, Ap1, Bp1, direction, nblocks, tol, Lmax, computeMode, nThreads));
+    rcpp_result_gen = Rcpp::wrap(SIR_Cpp(t, alpha, beta, S0, I0, Ap1, Bp1, direction, powS, powI_inf, powI_rem, nblocks, tol, Lmax, computeMode, nThreads));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -80,11 +109,36 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// tb_lt_invert_Cpp
+std::vector<double> tb_lt_invert_Cpp(double t, const std::vector<double>& lambda1, const std::vector<double>& lambda2, const std::vector<double>& lambda3, const int Ap1, const int Bp1, const int Cp1, const int direction, const int nblocks, const double tol, int& Lmax, const int computeMode, const int nThreads);
+RcppExport SEXP _MultiBD_tb_lt_invert_Cpp(SEXP tSEXP, SEXP lambda1SEXP, SEXP lambda2SEXP, SEXP lambda3SEXP, SEXP Ap1SEXP, SEXP Bp1SEXP, SEXP Cp1SEXP, SEXP directionSEXP, SEXP nblocksSEXP, SEXP tolSEXP, SEXP LmaxSEXP, SEXP computeModeSEXP, SEXP nThreadsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type t(tSEXP);
+    Rcpp::traits::input_parameter< const std::vector<double>& >::type lambda1(lambda1SEXP);
+    Rcpp::traits::input_parameter< const std::vector<double>& >::type lambda2(lambda2SEXP);
+    Rcpp::traits::input_parameter< const std::vector<double>& >::type lambda3(lambda3SEXP);
+    Rcpp::traits::input_parameter< const int >::type Ap1(Ap1SEXP);
+    Rcpp::traits::input_parameter< const int >::type Bp1(Bp1SEXP);
+    Rcpp::traits::input_parameter< const int >::type Cp1(Cp1SEXP);
+    Rcpp::traits::input_parameter< const int >::type direction(directionSEXP);
+    Rcpp::traits::input_parameter< const int >::type nblocks(nblocksSEXP);
+    Rcpp::traits::input_parameter< const double >::type tol(tolSEXP);
+    Rcpp::traits::input_parameter< int& >::type Lmax(LmaxSEXP);
+    Rcpp::traits::input_parameter< const int >::type computeMode(computeModeSEXP);
+    Rcpp::traits::input_parameter< const int >::type nThreads(nThreadsSEXP);
+    rcpp_result_gen = Rcpp::wrap(tb_lt_invert_Cpp(t, lambda1, lambda2, lambda3, Ap1, Bp1, Cp1, direction, nblocks, tol, Lmax, computeMode, nThreads));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_MultiBD_SIR_Cpp", (DL_FUNC) &_MultiBD_SIR_Cpp, 13},
+    {"_MultiBD_SEIR_Cpp", (DL_FUNC) &_MultiBD_SEIR_Cpp, 16},
+    {"_MultiBD_SIR_Cpp", (DL_FUNC) &_MultiBD_SIR_Cpp, 16},
     {"_MultiBD_bb_lt_invert_Cpp", (DL_FUNC) &_MultiBD_bb_lt_invert_Cpp, 11},
     {"_MultiBD_bbd_lt_invert_Cpp", (DL_FUNC) &_MultiBD_bbd_lt_invert_Cpp, 16},
+    {"_MultiBD_tb_lt_invert_Cpp", (DL_FUNC) &_MultiBD_tb_lt_invert_Cpp, 13},
     {NULL, NULL, 0}
 };
 

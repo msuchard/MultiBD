@@ -14,11 +14,16 @@
 #' @param nSI number of infection events
 #' @param nIR number of removal events
 #' @param direction direction of the transition probabilities (either \code{Forward} or \code{Backward})
+#' @param power the power of the general SIR model (see Note for more details)
 #' @param nblocks number of blocks
 #' @param tol tolerance
 #' @param computeMode computation mode
 #' @param nThreads number of threads
 #' @return a matrix of the transition probabilities
+#' @note The infection rate and the removal rate of a general SIR model
+#' are \code{beta*S^{powS}*I^{powI_inf}} and \code{alpha*I^{powI_rem}} respectively.
+#' The parameter \code{power} is a list of \code{powS, powI_inf, powI_rem}.
+#' Their default values are \code{powS = powI_inf = pwoI_rem = 1}, which correspond to the classic SIR model.
 #' @examples
 #' data(Eyam)
 #'
@@ -49,11 +54,20 @@
 #' @export
 
 SIR_prob <- function(t, alpha, beta, S0, I0, nSI, nIR, direction = c("Forward","Backward"),
-                     nblocks = 20, tol = 1e-12, computeMode = 0, nThreads = 4) {
+                     power = NULL, nblocks = 20, tol = 1e-12, computeMode = 0, nThreads = 4) {
 
   direction <- match.arg(direction)
   dir = 0
   if (direction == "Backward") dir = 1
+  if (is.null(power)) {
+    powS = 1
+    powI_inf = 1
+    powI_rem =1
+  } else {
+    powS = power$powS
+    powI_inf = power$powI_inf
+    powI_rem = power$powI_rem
+  }
 
   ################################
   ### t is too small
@@ -69,11 +83,10 @@ SIR_prob <- function(t, alpha, beta, S0, I0, nSI, nIR, direction = c("Forward","
   }
 
   Lmax = nblocks # initialize Lmax
-  res = matrix(SIR_Cpp(t, alpha, beta, S0, I0, nSI + 1, nIR + 1, dir, nblocks, tol,
-                       Lmax, computeMode, nThreads),
+  res = matrix(SIR_Cpp(t, alpha, beta, S0, I0, nSI + 1, nIR + 1, dir,
+                       powS, powI_inf, powI_rem,
+                       nblocks, tol, Lmax, computeMode, nThreads),
                nrow = nSI + 1, byrow = T)
-
-  print(paste("L =",Lmax))
 
   rownames(res) = 0:nSI # Infection events
   colnames(res) = 0:nIR # Removal events

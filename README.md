@@ -71,6 +71,9 @@ Beta
 
 ## References
 
-1. Ho LST, Xu J, Crawford FW, Minin VN, Suchard MA.
-[Birth(death)/birth-death processes and their computable transition probabilities with statistical applications](https://arxiv.org/abs/1603.03819).
-*arXiv preprint arXiv*:1603.03819, 2016.
+1. Ho LST, Xu J, Crawford FW, Minin VN, Suchard MA (2018).
+[Birth/birth-death processes and their computable transition probabilities with biological applications](https://link.springer.com/article/10.1007/s00285-017-1160-3).
+Journal of Mathematical Biology 76(4) 911-944.
+2. Ho LST, Crawford FW, Suchard MA (2018).
+[Direct likelihood-based inference for discretely observed stochastic compartmental models of infectious disease](https://arxiv.org/abs/1608.06769).
+Annals of Applied Statistics. In press.
