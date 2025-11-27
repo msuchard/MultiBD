@@ -243,7 +243,7 @@ namespace loops {
            size_t start = 0;
           for (int i = 0; i < nThreads - 1; ++i, start += chunkSize) {
 
-            workers.run([begin, end, start, chunkSize, function]() {
+            workers.run([begin, start, chunkSize, function]() {
               std::for_each(begin + start, begin + start + chunkSize, function);
             });
           }

@@ -4,8 +4,22 @@
 \alias{dbd_prob}
 \title{Transition probabilities of a death/birth-death process}
 \usage{
-dbd_prob(t, a0, b0, mu1, lambda2, mu2, gamma, a = 0, B, nblocks = 256,
-  tol = 1e-12, computeMode = 0, nThreads = 4, maxdepth = 400)
+dbd_prob(
+  t,
+  a0,
+  b0,
+  mu1,
+  lambda2,
+  mu2,
+  gamma,
+  a = 0,
+  B,
+  nblocks = 256,
+  tol = 1e-12,
+  computeMode = 0,
+  nThreads = 4,
+  maxdepth = 400
+)
 }
 \arguments{
 \item{t}{time}
@@ -92,4 +106,3 @@ p <- dbd_prob(t = 1, a0 = 10, b0 = 0,
 \references{
 Ho LST et al. 2016. "Birth(death)/birth-death processes and their computable transition probabilities with statistical applications". In review.
 }
-

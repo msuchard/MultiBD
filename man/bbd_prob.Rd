@@ -4,8 +4,22 @@
 \alias{bbd_prob}
 \title{Transition probabilities of a birth/birth-death process}
 \usage{
-bbd_prob(t, a0, b0, lambda1, lambda2, mu2, gamma, A, B, nblocks = 256,
-  tol = 1e-12, computeMode = 0, nThreads = 4, maxdepth = 400)
+bbd_prob(
+  t,
+  a0,
+  b0,
+  lambda1,
+  lambda2,
+  mu2,
+  gamma,
+  A,
+  B,
+  nblocks = 256,
+  tol = 1e-12,
+  computeMode = 0,
+  nThreads = 4,
+  maxdepth = 400
+)
 }
 \arguments{
 \item{t}{time}
@@ -82,4 +96,3 @@ loglik_sir(log(c(3.204, 0.019)), Eyam) # Evaluate at mode
 \references{
 Ho LST et al. 2015. "Birth(death)/birth-death processes and their computable transition probabilities with statistical applications". In review.
 }
-

@@ -2,8 +2,8 @@
 % Please edit documentation in R/MultiBD.R
 \docType{package}
 \name{MultiBD}
-\alias{MultiBD}
 \alias{MultiBD-package}
+\alias{MultiBD}
 \title{Multivariate birth-death processes}
 \description{
 The MultiBD package computes the transition probabilities
@@ -12,4 +12,19 @@ of several multivariate birth-death processes.
 \references{
 Ho LST et al. 2016. "Birth(death)/birth-death processes and their computable transition probabilities with statistical applications". In review.
 }
+\author{
+\strong{Maintainer}: Marc A. Suchard \email{msuchard@ucla.edu}
 
+Authors:
+\itemize{
+  \item Lam S.T. Ho
+  \item Forrest W. Crawford
+}
+
+Other contributors:
+\itemize{
+  \item Jason Xu [contributor]
+  \item Vladimir N. Minin [contributor]
+}
+
+}

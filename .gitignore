@@ -13,3 +13,6 @@ vignettes/cache
 vignettes/figure
 vignettes/\.build\.timestamp
 vignettes/*.synctex.gz
+standalone/build
+/doc/
+/Meta/

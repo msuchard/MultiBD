@@ -8,3 +8,6 @@ vignettes/*.log
 vignettes/\.build\.timestamp
 vignettes/cache
 vignettes/figure
+standalone
+^doc$
+^Meta$
