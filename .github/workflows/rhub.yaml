@@ -58,6 +58,7 @@ jobs:
             scheme-basic
             xcolor
             framed
+            multirow
       - uses: r-hub/actions/checkout@v1
       - uses: r-hub/actions/platform-info@v1
         with:
