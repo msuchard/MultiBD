@@ -51,6 +51,13 @@ jobs:
       image: ${{ matrix.config.container }}
 
     steps:
+      - name: Setup TeX Live
+        uses: teatimeguest/setup-texlive-action@v3
+        with:
+          packages:  |
+            scheme-medium
+            xcolor
+            framed    
       - uses: r-hub/actions/checkout@v1
       - uses: r-hub/actions/platform-info@v1
         with:
