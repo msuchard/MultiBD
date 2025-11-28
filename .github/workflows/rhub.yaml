@@ -55,7 +55,7 @@ jobs:
         uses: TeX-Live/setup-texlive-action@v3
         with:
           packages:  |
-            scheme-medium
+            scheme-full
             xcolor
             framed
             multirow
