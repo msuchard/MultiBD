@@ -55,11 +55,7 @@ jobs:
         uses: TeX-Live/setup-texlive-action@v3
         with:
           packages:  |
-            scheme-full
-            xcolor
-            framed
-            multirow
-            bbm
+            scheme-full            
       - uses: r-hub/actions/checkout@v1
       - uses: r-hub/actions/platform-info@v1
         with:
