@@ -1,6 +1,9 @@
 # MultiBD
 
-[![Build Status](https://github.com/msuchard/MultiBD/actions/workflows/R_CMD_check.yaml/badge.svg)](https://github.com/msuchard/MultiBD/actions?query=workflow%3AR-CMD-check) [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/MultiBD)](http://cran.r-project.org/package=MultiBD)
+[![Build Status](https://github.com/msuchard/MultiBD/actions/workflows/R_CMD_check.yaml/badge.svg)](https://github.com/msuchard/MultiBD/actions?query=workflow%3AR-CMD-check) 
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/MultiBD)](https://cran.r-project.org/package=MultiBD)
+
+
 
 `MultiBD` is an `R` package for direct likelihood-based inference of multivariate birth-death processes.
 
