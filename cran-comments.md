@@ -1,17 +1,15 @@
+## Package patch following email from Brian Ripley noting compiler deprecation of C++14
+
+1. Modernized author-list in `DESCRIPTION`
+2. Fixed C++ deprecation of `typename std::result_of<F(Args...)>::type`
+
 ## Test environments
-* local OS X install, R 3.2.2
-* ubuntu 12.04 (on travis-ci), R 3.2.5
-* win-builder (devel and release)
+* local macOS install (arm64), R 4.4
+* rhub (multiple architectures), R 4.5
+* win-builder (devel, release, oldrel)
 
 ## R CMD check results
-There were no ERRORs or WARNINGs.
-
-There was 1 NOTE:
-
-* checking CRAN incoming feasibility ... NOTE
-  Maintainer: 'Marc A. Suchard <msuchard@ucla.edu>'
-
-  New submission
+There were no ERRORs, WARNINGs or NOTEs.
 
 ## Downstream dependencies
 There are currently no downstream dependencies.

@@ -78,7 +78,7 @@ std::vector<double> tb_lt_invert_Cpp_impl(double t, const std::vector<double>& l
   //  using TimingUnits = std::chrono::microseconds;
   //  Rcpp::Rcout << "Time: " << std::chrono::duration_cast<TimingUnits>(end - start).count() << std::endl;
 
-  return(std::move(res));
+  return(res);
 }
 
 // [[Rcpp::export]]
