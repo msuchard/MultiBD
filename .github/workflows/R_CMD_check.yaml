@@ -85,8 +85,8 @@ jobs:
 
       - uses: r-lib/actions/check-r-package@v2
         with:
-          args: 'c("--no-manual", "--as-cran", "--no-build-vignettes")'
-          build_args: 'c("--compact-vignettes=both")'
+          args: 'c("--no-manual", "--as-cran")'
+          build_args: 'c( "--no-build-vignettes")'
           error-on: '"warning"'
           check-dir: '"check"'
 
