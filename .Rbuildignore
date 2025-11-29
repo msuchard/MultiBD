@@ -12,3 +12,4 @@ standalone
 ^doc$
 ^Meta$
 .github
+^CRAN-SUBMISSION$
