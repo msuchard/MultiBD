@@ -107,6 +107,3 @@ jobs:
 #         if: runner.os == 'macOS'
 #         run: covr::codecov()
 #         shell: Rscript {0}
-
-https://registry.hub.docker.com/u/ohdsi/broadsea-methodslibrary/trigger/f0b51cec-4027-4781-9383-4b38b42dd4f5/
-
