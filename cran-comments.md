@@ -1,7 +1,7 @@
-## Package patch following email from Brian Ripley noting compiler deprecation of C++14
+## Package patch following email from Brian Ripley noting:
+  `warning: implicit capture of ‘this’ via ‘[=]’ is deprecated in C++20`
 
-1. Modernized author-list in `DESCRIPTION`
-2. Fixed C++ deprecation of `typename std::result_of<F(Args...)>::type`
+1. Fixed C++20 deprecation of `implicit capture of this`
 
 ## Test environments
 * local macOS install (arm64), R 4.4

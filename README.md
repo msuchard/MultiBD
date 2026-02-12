@@ -56,8 +56,8 @@ loglik_sir(log(c(3.204, 0.019)), Eyam) # Evaluate at mode
 
 ## Vignettes
 
-1.  [Simple MCMC under SIR](https://github.com/msuchard/MultiBD/blob/master/inst/doc/SIR-MCMC.pdf)
-2.  [SIR model and proposed branching approximation](https://github.com/msuchard/MultiBD/blob/master/inst/doc/SIRtrans.pdf)
+1.  [Simple MCMC under SIR](https://github.com/msuchard/MultiBD/blob/master/doc/SIR-MCMC.pdf)
+2.  [SIR model and proposed branching approximation](https://github.com/msuchard/MultiBD/blob/master/doc/SIRtrans.pdf)
 
 ## License
 

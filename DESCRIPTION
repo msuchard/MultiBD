@@ -1,8 +1,8 @@
 Package: MultiBD
 Type: Package
 Title: Multivariate Birth-Death Processes
-Version: 1.0.0
-Date: 2025-11-27
+Version: 1.0.1
+Date: 2026-02-11
 Authors@R: c(person(given = c("Lam", "S.T."), family = "Ho", role = "aut"),
              person(given = c("Marc", "A."), family = "Suchard", role = c("aut", "cre"), email = "msuchard@ucla.edu"),
              person(given = c("Forrest", "W."), family = "Crawford", role = "aut"),
