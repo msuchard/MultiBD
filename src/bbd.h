@@ -357,7 +357,7 @@ namespace loops {
 				auto rtn = std::for_each(begin + start, end, function);
 
 				for (int i = 0; i < nThreads - 1; ++i) {
-					workers[i].get();
+					static_cast<void>(workers[i].get());
 				}
 				return rtn;
 			} else {

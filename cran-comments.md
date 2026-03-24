@@ -1,7 +1,7 @@
 ## Package patch following email from Brian Ripley noting:
-  `warning: implicit capture of ‘this’ via ‘[=]’ is deprecated in C++20`
+  ` warning: ignoring return value of function declared with 'nodiscard' attribute`
 
-1. Fixed C++20 deprecation of `implicit capture of this`
+1. Fixed C++ warning of `ignoring return value`
 
 ## Test environments
 * local macOS install (arm64), R 4.4
